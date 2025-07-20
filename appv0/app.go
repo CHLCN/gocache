@@ -14,6 +14,7 @@ func Run() {
 	// 使用go的http路由拉起服务
 
 	http.HandleFunc("/get_name", logic.GetInfo)
+	http.HandleFunc("/set_name", logic.SetInfoV1)
 
 	fmt.Println("服务启动中...")
 	if err := http.ListenAndServe(":8081", nil); err != nil {
